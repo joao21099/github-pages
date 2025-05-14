@@ -1,0 +1,26 @@
+# Cadastro de alunos e cálculo de médias
+
+alunos = []  # Lista para guardar os nomes dos alunos
+notas = []   # Lista para guardar as notas de cada aluno
+
+quantidade = int(input("Quantos alunos deseja cadastrar? "))
+
+for i in range(quantidade):
+    print(f"\nAluno {i+1}")
+    nome = input("Nome do aluno: ")
+    n1 = float(input("Nota 1: "))
+    n2 = float(input("Nota 2: "))
+
+    media = (n1 + n2) / 2
+
+    alunos.append(nome)
+    notas.append([n1, n2, media])
+
+# Mostrar resultados
+print("\n----- RESULTADOS -----")
+for i in range(quantidade):
+    nome = alunos[i]
+    n1, n2, media = notas[i]
+    situacao = "Aprovado" if media >= 7 else "Reprovado"
+
+    print(f"{nome}: Nota 1 = {n1}, Nota 2 = {n2}, Média = {media:.2f} → {situacao}")
